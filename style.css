@@ -255,11 +255,47 @@ nav ul li:last-child a {
 .pos button {
     margin: 10% auto;
     text-align: center;
-    background-color: #fff;
+    background-color: transparent;
     text-transform: uppercase;
     border: none;
     font-family: 'Fraunces', serif;
     font-weight: 900;
+    position: relative;
+    cursor: pointer;
+}
+
+.redBottom::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0%;
+    left: 0;
+    bottom: 0;
+    border-bottom: 8px red solid;
+    border-radius: 10px;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.redBottom:hover::before {
+    width: 100%;
+}
+
+.yellowBottom::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0%;
+    left: 0;
+    bottom: 0;
+    border-bottom: 8px yellow solid;
+    border-radius: 10px;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.yellowBottom:hover::before {
+    width: 100%;
 }
 
 /* sections posibillities media queries   */
@@ -320,47 +356,13 @@ nav ul li:last-child a {
     .pos button {
         margin: 5% 0;
         text-align: left;
-        background-color: transparent;
-        position: relative;
-        cursor: pointer;
+
+
 
     }
 
 
 
-    .redBottom::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 0%;
-        left: 0;
-        bottom: 0;
-        border-bottom: 8px red solid;
-        border-radius: 10px;
-        z-index: -1;
-        transition: 0.4s ease;
-    }
-
-    .redBottom:hover::before {
-        width: 100%;
-    }
-
-    .yellowBottom::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 0%;
-        left: 0;
-        bottom: 0;
-        border-bottom: 8px yellow solid;
-        border-radius: 10px;
-        z-index: -1;
-        transition: 0.4s ease;
-    }
-
-    .yellowBottom:hover::before {
-        width: 100%;
-    }
 
 }
 
@@ -610,6 +612,7 @@ footer {
     padding-top: 20px;
     background-color: hsl(168, 34%, 41%);
     align-items: center;
+    color: hsl(167, 40%, 24%);
 }
 
 
@@ -624,11 +627,15 @@ footer ul {
 footer ul li {
 
     padding: 0 20px;
+    cursor: pointer;
 }
 
-footer {
-    color: hsl(167, 40%, 24%);
+footer ul li:hover {
+
+    color: white;
 }
+
+
 
 /* footer socials */
 .socials {
@@ -674,13 +681,10 @@ footer {
     footer ul li {
 
         padding: 0 20px;
-        cursor: pointer;
+
     }
 
-    footer ul li:hover {
 
-        color: white;
-    }
 
     footer {
         color: hsl(167, 40%, 24%);
